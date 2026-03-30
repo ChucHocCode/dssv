@@ -1,0 +1,21 @@
+<?php
+/*
+Plugin Name: Student Manager
+Description: Quản lý sinh viên
+Version: 1.0
+Author: Your Name
+*/
+
+if (!defined('ABSPATH')) exit;
+
+// Include files
+require_once plugin_dir_path(__FILE__) . 'includes/cpt.php';
+require_once plugin_dir_path(__FILE__) . 'includes/meta-box.php';
+require_once plugin_dir_path(__FILE__) . 'includes/save-data.php';
+require_once plugin_dir_path(__FILE__) . 'includes/shortcode.php';
+
+// Load CSS
+function sm_enqueue_styles() {
+    wp_enqueue_style('sm-style', plugin_dir_url(__FILE__) . 'assets/style.css');
+}
+add_action('wp_enqueue_scripts', 'sm_enqueue_styles');
